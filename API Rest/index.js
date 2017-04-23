@@ -315,7 +315,7 @@ app.post('/rest/grupo', (req, res) => {
 
     let nuevoGrupo = new Grupo()
     nuevoGrupo.name = req.body.name
-    nuevoGrupo.self = req.url + '/' + newId
+    nuevoGrupo.self = req.url + '/' + req.body.name
 
     nuevoGrupo.save((err, grupoGuardado) => {
         if(err)
