@@ -325,7 +325,7 @@ app.post('/rest/grupo', (req, res) => {
   })
 })
 
-mongoose.connect('mongodb://localhost:27017/dedam-db', (err, res) => {
+mongoose.connect('mongodb://'+process.env.MONGO_URL+':27017/dedam-db', (err, res) => {
   if(err)
    return console.log(`Error al conectar con la base de datos: ${err}`)
   console.log('Conexión establecida con la base de datos')
